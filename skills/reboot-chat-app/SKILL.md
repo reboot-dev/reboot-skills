@@ -213,18 +213,18 @@ application directory.**
    `index.css`
 8. `cd web && npm install`
 9. `uv run rbt generate` (React bindings need `node_modules`)
-10. Write React: `index.html`, `main.tsx`, `App.tsx`,
+10. Create `mcp_servers.json` with
+    `{"mcpServers":{"<name>":{"type":"streamable-http","url":"http://localhost:9991/mcp"}}}`
+11. Write React: `index.html`, `main.tsx`, `App.tsx`,
     `App.module.css`
-11. `cd web && npm run build`
-12. `uv run rbt dev run`
-13. Tell the user to run `cd web && npm run dev` in a separate
+12. `cd web && npm run build`
+13. Tell the user to run `uv run rbt dev run` to start the backend.
+14. Tell the user to run `cd web && npm run dev` in a separate
     terminal. This starts the Vite dev server for HMR — edits
     to React components will hot-reload in the browser without
     a full rebuild. The `.rbtrc` defaults to HMR mode, which
     proxies Vite through Envoy at `/__/web/`.
-14. Test with MCPJam Inspector: create `mcp_servers.json` with
-    `{"mcpServers":{"<name>":{"type":"streamable-http","url":"http://localhost:9991/mcp"}}}`
-    then `npx @mcpjam/inspector@v2.0.4 --config mcp_servers.json --server <name>`
+15. Tell the user to test with MCPJam Inspector: run `npx @mcpjam/inspector@v2.0.4 --config mcp_servers.json --server <name>`
 
 ## Inline Patterns
 
