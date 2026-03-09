@@ -551,7 +551,7 @@ Rules:
 #### Simple Servicer (Counter)
 
 ```python
-from mcp_counter.v1.counter_rbt import Counter, Session
+from ai_chat_counter.v1.counter_rbt import Counter, Session
 from reboot.aio.auth.authorizers import allow
 from reboot.aio.contexts import (
     ReaderContext,
@@ -982,7 +982,7 @@ await myType.addItem({ text: "New item" });
 
 ```tsx
 import { useEffect, useRef, useState, type FC } from "react";
-import { useCounter } from "@api/mcp_counter/v1/counter_rbt_react";
+import { useCounter } from "@api/ai_chat_counter/v1/counter_rbt_react";
 import css from "./App.module.css";
 
 export const ClickerApp: FC = () => {
@@ -1228,6 +1228,8 @@ Adapt the CSS module to your app's needs. The CSS variables from
     props. `UI(request=None)` passes no props.
 16. **Register all servicers** in `main.py`:
     `Application(servicers=[SessionServicer, CounterServicer])`.
+17. The requests and responses on the frontend are always Zod types
+    generated from the Python Models.
 
 ## Update Flow
 
